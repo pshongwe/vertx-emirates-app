@@ -27,7 +27,7 @@ public class BookingVerticleTest {
                 .put("name", "John Doe")
                 .put("flightNumber", "ABC123");
 
-        client.post(8080, "localhost", "/book")
+        client.post(8082, "localhost", "/book")
                 .sendJsonObject(booking, testContext.succeeding(response -> testContext.verify(() -> {
                     assertEquals(200, response.statusCode());
                     JsonObject body = response.bodyAsJsonObject();
@@ -47,10 +47,10 @@ public class BookingVerticleTest {
                 .put("name", "Jane Smith")
                 .put("flightNumber", "XYZ789");
 
-        client.post(8080, "localhost", "/book")
+        client.post(8082, "localhost", "/book")
                 .sendJsonObject(booking, testContext.succeeding(postResponse -> {
                     // Then, get all bookings
-                    client.get(8080, "localhost", "/bookings")
+                    client.get(8082, "localhost", "/bookings")
                             .send(testContext.succeeding(getResponse -> testContext.verify(() -> {
                                 assertEquals(200, getResponse.statusCode());
                                 String body = getResponse.bodyAsString();

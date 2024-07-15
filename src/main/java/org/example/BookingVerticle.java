@@ -46,9 +46,9 @@ public class BookingVerticle extends AbstractVerticle {
 
         vertx.createHttpServer()
                 .requestHandler(router)
-                .listen(8080, result -> {
+                .listen(8082, result -> {
                     if (result.succeeded()) {
-                        System.out.println("BookingVerticle is deployed and listening on port 8080");
+                        System.out.println("BookingVerticle is deployed and listening on port 8082");
                     } else {
                         System.out.println("Failed to deploy BookingVerticle: " + result.cause());
                     }
