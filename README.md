@@ -34,7 +34,7 @@ To run this project, ensure you have Java 17 and Maven installed on your system.
 To start the server, run:
 
 ```sh
-mvn exec:java -Dexec.mainClass="org.example.BookingVerticle"
+mvn exec:java -Dexec.mainClass="org.example.MainVerticle"
 ```
 
 The server will start and listen on port 8080.
